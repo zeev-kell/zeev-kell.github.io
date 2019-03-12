@@ -1,35 +1,34 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
+    <div style="position:relative;z-index: 2">
       <h1 class="title">
         zeev-kell
       </h1>
       <h2 class="subtitle">
-        My awesome Nuxt.js project
+        Web Front-end Engineer
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
     </div>
+    <canvas id="canvas"></canvas>
   </section>
 </template>
 
 <script>
-  import Logo from '~/components/Logo.vue'
+  import Particle from '~/assets/particle'
 
   export default {
-    components: {
-      Logo
+    data() {
+      return {
+        particle: undefined
+      }
+    },
+    mounted() {
+      this.particle = new Particle(this.$el.querySelector('#canvas'), {
+        drawType: ['polygon'],
+        amplitude: 2
+      })
+    },
+    beforeDestroy() {
+      this.particle.destroy();
     }
   }
 </script>
@@ -42,6 +41,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
 
   .title {
@@ -60,9 +66,5 @@
     color: #526488;
     word-spacing: 5px;
     padding-bottom: 15px;
-  }
-
-  .links {
-    padding-top: 15px;
   }
 </style>

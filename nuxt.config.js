@@ -7,6 +7,9 @@ const pkg = require('./package')
 //   }
 // } : {}
 
+// 百度统计
+const hm = process.env.NODE_ENV !== 'development' ? [{src: 'https://hm.baidu.com/hm.js?26c21b60bbfbfefe5a882f2ac5cb7fcc'}] : [];
+
 module.exports = {
   mode: 'universal',
 
@@ -20,7 +23,12 @@ module.exports = {
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {hid: 'description', name: 'description', content: pkg.description}
     ],
-    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}]
+    link: [
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+    ],
+    script: [
+      ...hm
+    ]
   },
 
   /*
