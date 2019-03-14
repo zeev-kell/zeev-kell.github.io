@@ -7,6 +7,9 @@
       <h2 class="subtitle">
         Web Front-end Engineer
       </h2>
+      <div>
+        <github />
+      </div>
     </div>
     <canvas id="canvas"></canvas>
   </section>
@@ -14,6 +17,7 @@
 
 <script>
   import Particle from '~/assets/particle'
+  import Github from '~/components/github'
 
   export default {
     data() {
@@ -23,12 +27,16 @@
     },
     mounted() {
       this.particle = new Particle(this.$el.querySelector('#canvas'), {
-        drawType: ['polygon'],
-        amplitude: 2
-      })
+        drawType: ['polygon']
+      });
+      window.addEventListener('resize', this.particle.resize.bind(this.particle), false);
     },
     beforeDestroy() {
       this.particle.destroy();
+      window.removeEventListener('resize', this.particle.resize.bind(this.particle));
+    },
+    components: {
+      Github
     }
   }
 </script>
@@ -54,14 +62,14 @@
     font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: block;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 100px;
     color: #35495e;
     letter-spacing: 1px;
   }
 
   .subtitle {
-    font-weight: 300;
+    font-weight: normal;
     font-size: 42px;
     color: #526488;
     word-spacing: 5px;

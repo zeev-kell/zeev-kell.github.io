@@ -15,10 +15,12 @@
     "generate:deploy": "npm run generate && push-dir --dir=dist --branch=master --cleanup"
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
     "koa": "^2.6.2",
-    "@nuxtjs/pwa": "^2.6.0"
+    "nuxt": "^2.4.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
