@@ -1,5 +1,5 @@
 <template>
-  <a title="GitHub" href="https://github.com/zeev-kell" target="_blank" class="git-btn">
+  <a title="GitHub" href="https://github.com/zeev-kell" target="_blank" class="git-btn social-icon">
     <svg height="24" class="icon-svg icon-svg-github" viewBox="0 0 16 16" version="1.1" width="24"
          aria-hidden="true">
       <path fill-rule="evenodd"
@@ -14,11 +14,3 @@
     name: "github"
   }
 </script>
-<style scoped lang="stylus" rel="stylesheet/stylus">
-  .git-btn {
-    color: #c6cbd1;
-    &:hover {
-      color: #959da5;
-    }
-  }
-</style>

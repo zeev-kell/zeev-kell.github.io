@@ -5,10 +5,11 @@
         zeev-kell
       </h1>
       <h2 class="subtitle">
-        Web Front-end Engineer
+        Front End Engineer
       </h2>
-      <div>
-        <github />
+      <div class="flex-row is-justify-center icons-wrap">
+        <github/>
+        <misc/>
       </div>
     </div>
     <canvas id="canvas"></canvas>
@@ -18,6 +19,7 @@
 <script>
   import Particle from '~/assets/particle'
   import Github from '~/components/github'
+  import Misc from '~/components/misc'
 
   export default {
     data() {
@@ -36,12 +38,13 @@
       window.removeEventListener('resize', this.particle.resize.bind(this.particle));
     },
     components: {
-      Github
+      Github,
+      Misc
     }
   }
 </script>
 
-<style>
+<style scoped>
   .container {
     margin: 0 auto;
     min-height: 100vh;
@@ -74,5 +77,9 @@
     color: #526488;
     word-spacing: 5px;
     padding-bottom: 15px;
+  }
+
+  .icons-wrap a {
+    margin: 0 6px;
   }
 </style>

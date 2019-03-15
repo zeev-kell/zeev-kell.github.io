@@ -38,7 +38,7 @@ class Particle {
     this.drawMethods = opts.drawType.map((type) => {
       return 'draw' + type.substring(0, 1).toUpperCase() + type.substring(1);
     });
-    DrawHelper.init(opts);
+    this.drawHelper = getDrawHelper(opts);
     this.opts = opts;
   }
 
@@ -114,9 +114,9 @@ class Particle {
     c.x = (_1.x + _2.x + _3.x) / 3 + (random() * this.opts.amplitude - 0.25) * this.opts.wave;
     c.y = (_1.y + _2.y + _3.y) / 3 + (random() * this.opts.amplitude - 0.25) * this.opts.wave;
 
-    let sideLength = DrawHelper.sideLength; //-- 边数
-    let initialAngle = DrawHelper.initialAngle; //-- 角度
-    let radius = DrawHelper.radius / this.opts.amplitude; //-- 半径
+    let sideLength = this.drawHelper.getSideLength(); //-- 边数
+    let initialAngle = this.drawHelper.getInitialAngle(); //-- 角度
+    let radius = this.drawHelper.getRadius() / this.opts.amplitude; //-- 半径
     let angle = U / sideLength;
     let x = radius * Math.cos(initialAngle) + c.x;
     let y = radius * Math.sin(initialAngle) + c.y;
@@ -164,44 +164,30 @@ class Particle {
   }
 }
 
-class DrawHelper {
-  static getSideLength() {
-    return Math.floor(random() * 10) + 3;
-  }
-
-  static get sideLength() {
-    return this.getSideLength();
-  }
-
-  static getInitialAngle() {
-    return random() * U;
-  }
-
-  static get initialAngle() {
-    return this.getInitialAngle()
-  }
-
-  static getRadius() {
-    return random() * 50
-  }
-
-  static get radius() {
-    return this.getRadius()
-  }
-
-  // 修改矩形的边数和角度等
-  static init(opts) {
-    if (opts.drawType.includes('polygon')) {
-      Object.keys(opts.params || {}).forEach((key) => {
-        if (typeof opts.params[key] === 'function') {
-          DrawHelper[key] = opts.params[key];
-        } else {
-          DrawHelper[key] = function () {
-            return opts.params[key];
-          };
-        }
-      })
-    }
+function getDrawHelper(opts) {
+  // 目前只有 polygon 有随机边角
+  if (!!~opts.drawType.indexOf('polygon')) {
+    let drawHelper = {
+      getSideLength() {
+        return Math.floor(random() * 10) + 3;
+      },
+      getInitialAngle() {
+        return random() * U;
+      },
+      getRadius() {
+        return random() * 50
+      }
+    };
+    Object.keys(opts.params || {}).forEach((key) => {
+      if (typeof opts.params[key] === 'function') {
+        drawHelper[key] = opts.params[key];
+      } else {
+        drawHelper[key] = function () {
+          return opts.params[key];
+        };
+      }
+    });
+    return drawHelper
   }
 }
 

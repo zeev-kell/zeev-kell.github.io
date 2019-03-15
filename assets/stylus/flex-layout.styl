@@ -1,0 +1,27 @@
+.flex-clearfix {
+  &:before, &:after {
+    content: " ";
+    display: flex;
+    box-sizing: border-box;
+    width: 0;
+    height: 0;
+    font-size: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.flex-column, .flex-row {
+  display: flex;
+  flex-wrap: wrap; // 默认换行
+  @extend .flex-clearfix;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.is-justify-center {
+  justify-content: center;
+}
