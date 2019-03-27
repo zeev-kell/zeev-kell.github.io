@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="full-container">
     <div style="position:relative;z-index: 2">
       <h1 class="title">
         zeev-kell
@@ -45,14 +45,6 @@
 </script>
 
 <style scoped>
-  .container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
 
   #canvas {
     position: absolute;
