@@ -44,8 +44,8 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="stylus" rel="stylesheet/stylus">
+  @import "../assets/stylus/mixins.styl";
   #canvas {
     position: absolute;
     top: 0;
@@ -55,20 +55,26 @@
 
   .title {
     font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: block;
     font-weight: 400;
-    font-size: 100px;
+    font-size: 8rem;
     color: #35495e;
     letter-spacing: 1px;
+    +for_breakpoint(_tablet) {
+      font-size: 4rem;
+    }
   }
 
   .subtitle {
     font-weight: normal;
-    font-size: 42px;
+    font-size: 3rem;
     color: #526488;
     word-spacing: 5px;
     padding-bottom: 15px;
+    +for_breakpoint(_tablet) {
+      font-size: 1.5rem;
+    }
   }
 
   .icons-wrap a {

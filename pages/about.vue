@@ -175,7 +175,7 @@
       line-height 31px;
       text-align left
       color #F5F5F5;
-      margin 0 5px;
+      margin 0 5px 0 10px;
     }
   }
 
