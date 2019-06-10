@@ -19,7 +19,7 @@
         <ul class="content-container">
           <span class="pole"></span>
           <li class="content-list" v-for="(content, index) in work.contents"
-              :class="{'content-left':index & 1}">
+              :class="{'content-left':content.index & 1}">
             <div class="content-header">
               <div class="content-title">
                 <h2>{{content.title}}</h2>
@@ -47,7 +47,7 @@
     name: "about",
     data() {
       return {
-        workList: random({
+        workList_: random({
           time: '2018.5 - 2019.5',
           subText: 'Python开发工程师',
           contents: random({
@@ -57,11 +57,23 @@
           }, 3)
         }, 2)
       }
+    },
+    computed: {
+      workList() {
+        let i = 0;
+        this.workList_.forEach(w => {
+          w.contents.forEach(c => {
+            c.index = i++;
+          })
+        });
+        return this.workList_;
+      }
     }
   }
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "../assets/stylus/mixins.styl";
   $pd = 20px;
   $bg = #35495e;
   .background {
@@ -151,7 +163,7 @@
   }
 
   .content-list {
-    padding-top 2em
+    padding-top 3rem
     position: relative;
   }
 
@@ -187,7 +199,10 @@
   .description {
     width 50%;
     margin 0 0 0 50%
-    padding 0 0 80px $pd;
+    padding 0 0 7rem $pd;
+    +for_breakpoint(desktop_) {
+      padding 0 0 10rem $pd;
+    }
   }
 
   .content-left {
