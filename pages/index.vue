@@ -16,7 +16,7 @@
   </section>
 </template>
 
-<script>
+<script type="text/babel">
   import Particle from '~/assets/particle'
   import Github from '~/components/github'
   import Misc from '~/components/misc'

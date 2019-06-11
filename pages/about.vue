@@ -5,7 +5,15 @@
       <div class="image-container">
         <div class="image">image</div>
         <div class="item-list">
-          <div class="item">item</div>
+          <vivus-pend class="pend-1">
+            <text>Node.js</text>
+          </vivus-pend>
+          <vivus-pend class="pend-2" :point2="[40, 60]">
+            <text>Node.js</text>
+          </vivus-pend>
+          <vivus-pend class="pend-3" :point2="[-40, 60]" :isXTurn="true">
+            <text>Node.js</text>
+          </vivus-pend>
         </div>
       </div>
     </div>
@@ -17,8 +25,7 @@
           <p v-if="work.subText" class="sub-text">{{work.subText}}</p>
         </div>
         <ul class="content-container">
-          <span class="pole"></span>
-          <li class="content-list" v-for="(content, index) in work.contents"
+          <li class="content-list" v-for="content in work.contents"
               :class="{'content-left':content.index & 1}">
             <div class="content-header">
               <div class="content-title">
@@ -40,8 +47,9 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
   import {random} from '../assets/utils';
+  import VivusPend from '../components/vivus-pend'
 
   export default {
     name: "about",
@@ -68,6 +76,9 @@
         });
         return this.workList_;
       }
+    },
+    components: {
+      VivusPend
     }
   }
 </script>
@@ -76,12 +87,15 @@
   @import "../assets/stylus/mixins.styl";
   $pd = 20px;
   $bg = #35495e;
+
   .background {
     position absolute;
     z-index 0;
     background #EEE
     width 100%
     height 100%;
+    background url("/image/bg.jpg") no-repeat
+    background-size cover
   }
 
   .image-container {
@@ -94,6 +108,22 @@
     border-radius 50%;
     width 38.2vh;
     height 38.2vh;
+    position relative
+  }
+
+  .pend-1 {
+    top 30%
+    left 80%
+  }
+
+  .pend-2 {
+    top 70%
+    left 70%
+  }
+
+  .pend-3 {
+    top 50%
+    left 20%
   }
 
   .work-title {
