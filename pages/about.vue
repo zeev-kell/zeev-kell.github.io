@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div class="full-container">
+    <div class="full-container flex-column">
       <div class="background"></div>
       <div class="image-container">
-        <div class="image">image</div>
+        <div class="image"></div>
         <div class="item-list">
           <vivus-pend class="pend-1">
             <text>Node.js</text>
           </vivus-pend>
-          <vivus-pend class="pend-2" :point2="[40, 60]">
+          <vivus-pend class="pend-2" :point2="[50, 60]">
             <text>Node.js</text>
           </vivus-pend>
           <vivus-pend class="pend-3" :point2="[-40, 60]" :isXTurn="true">
@@ -16,31 +16,20 @@
           </vivus-pend>
         </div>
       </div>
+      <div class="flex-row is-justify-center icons-wrap">
+        <github/>
+        <misc/>
+      </div>
     </div>
     <div class="work-container">
-      <header class="work-title">work-container</header>
+      <header class="work-title">工作经历</header>
       <div class="work-list" v-for="work in workList">
         <div class="time text-center">
           <h2>{{work.time}}</h2>
           <p v-if="work.subText" class="sub-text">{{work.subText}}</p>
         </div>
         <ul class="content-container">
-          <li class="content-list" v-for="content in work.contents"
-              :class="{'content-left':content.index & 1}">
-            <div class="content-header">
-              <div class="content-title">
-                <h2>{{content.title}}</h2>
-                <i class="content-date">{{content.date}}</i>
-                <p class="blank">&nbsp;</p>
-              </div>
-              <div class="hexagon"></div>
-            </div>
-            <div class="content-text">
-              <div class="description">
-                {{content.description}}<br>
-              </div>
-            </div>
-          </li>
+          <work-content :content="content" v-for="content in work.contents" :key="content.index"/>
         </ul>
       </div>
     </div>
@@ -50,20 +39,44 @@
 <script type="text/babel">
   import {random} from '../assets/utils';
   import VivusPend from '../components/vivus-pend'
+  import Github from '~/components/github'
+  import Misc from '~/components/misc'
+  import WorkContent from '~/components/work-content'
 
   export default {
     name: "about",
     data() {
       return {
-        workList_: random({
-          time: '2018.5 - 2019.5',
-          subText: 'Python开发工程师',
+        workList_: [{
+          time: '2014.5 - 2015.5',
+          subText: '深圳市易数通科技有限公司',
+          contents: [{
+            title: 'Lorem ipsum Anim',
+            date: '2014.5.23',
+            description: '为测序服务商提供PB级的存储空间，实现下机数据与云端的直接对接.'
+          }]
+        }, {
+          time: '2015.5 - 2016.3',
+          subText: '深圳市潜游时光文化传媒有限公司',
           contents: random({
             title: 'Lorem ipsum Anim',
             date: '2018.5.23',
-            description: 'I\'m speaking with myself, number one, because I have a very good brain and I\'ve said a lot of things. I write the best placeholder text, and I\'m the biggest developer on the web by far... While that\'s mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.'
+            description: '为测序服务商提供PB级的存储空间，实现下机数据与云端的直接对接.'
           }, 3)
-        }, 2)
+        }, {
+          time: '2016.3 - 至今',
+          subText: '华大基因股份有限公司',
+          contents: [{
+            title: 'BGIOnline',
+            link: 'https://www.bgionline.cn/',
+            date: '2016.3 - 2019.2',
+            technology: 'Ember.js + jQuery + Bootstrap',
+            description: [
+              '基因云计算平台，持多种形式进行上传下载，一键启动WGS、WES、RNA-Seq等多种分析流程。',
+              ''
+            ].join('<br>')
+          }].reverse()
+        }].reverse()
       }
     },
     computed: {
@@ -78,7 +91,10 @@
       }
     },
     components: {
-      VivusPend
+      VivusPend,
+      Github,
+      Misc,
+      WorkContent
     }
   }
 </script>
@@ -106,8 +122,8 @@
   .image {
     background $bg
     border-radius 50%;
-    width 38.2vh;
-    height 38.2vh;
+    width 25vh;
+    height 25vh;
     position relative
   }
 
@@ -128,12 +144,13 @@
 
   .work-title {
     text-align: center;
-    font-size 2rem;
+    font-size 2.5rem;
     position relative;
     font-weight bold;
     margin-bottom: 60px;
-    padding: 3em 0 2em;
+    padding: 4rem 0 3rem;
     border-bottom: 1px solid #E4EAEC;
+    background #f7f8fb
     &:after {
       display inline-block;
       width 4rem;
@@ -192,99 +209,4 @@
     }
   }
 
-  .content-list {
-    padding-top 3rem
-    position: relative;
-  }
-
-  .content-header {
-    margin: 0 0 0 50%;
-    width 50%;
-  }
-
-  .content-title {
-    padding 0 0 0 $pd;
-    display flex;
-    > h2, > .content-date {
-      flex auto 0 0;
-    }
-    > .blank {
-      flex 100% 1 1
-    }
-    > .content-date {
-      background darkcyan
-      padding 0 8px
-      line-height 31px;
-      text-align left
-      color #F5F5F5;
-      margin 0 5px 0 10px;
-    }
-  }
-
-  .content-text {
-    position relative;
-    padding 10px 0 20px;
-  }
-
-  .description {
-    width 50%;
-    margin 0 0 0 50%
-    padding 0 0 7rem $pd;
-    +for_breakpoint(desktop_) {
-      padding 0 0 10rem $pd;
-    }
-  }
-
-  .content-left {
-    .content-header {
-      margin: 0 50% 0 0;
-    }
-    .content-title {
-      flex-direction: row-reverse
-      padding 0 $pd 0 0;
-    }
-    .description {
-      margin 0 50% 0 0
-      padding 0 $pd 80px 0;
-    }
-  }
-
-  /* point line */
-  .hexagon {
-    text-align: center;
-    font-size: 22px;
-    color: #3c3c3c;
-    width: 16px;
-    height: 10px;
-    position: absolute;
-    background: $bg;
-    z-index: 5;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -20px;
-    &:before {
-      content: " ";
-      position: absolute;
-      left: 0;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-bottom: 4px solid $bg;
-      top: -4px;
-    }
-    &:after {
-      content: " ";
-      position: absolute;
-      left: 0;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 4px solid $bg;
-      bottom: -4px;
-    }
-  }
 </style>

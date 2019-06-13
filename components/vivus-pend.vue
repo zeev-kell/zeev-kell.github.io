@@ -2,8 +2,8 @@
   <div class="pend" v-show="isShow">
     <svg width="2" height="2">
       <g>
-        <circle cx="0" cy="0" r="6"></circle>
         <circle cx="0" cy="0" r="4"></circle>
+        <circle cx="0" cy="0" r="2"></circle>
       </g>
       <g>
         <line x1="0" y1="0" :x2="point2[0]" :y2="point2[1]"></line>
@@ -40,7 +40,7 @@
     },
     computed: {
       point3() {
-        let time = 180;
+        let time = 150;
         return [this.point2[0] + (this.isXTurn ? -time : time), this.point2[1]]
       },
       transform() {
