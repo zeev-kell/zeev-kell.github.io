@@ -86,6 +86,26 @@
     }
   }
 
+  .description {
+    max-width 600px
+    /deep/ .summary::before {
+      content '概述：'
+    }
+    /deep/ .point::before {
+      content '特点：'
+    }
+    /deep/ .duty::before {
+      content '职责：'
+    }
+    /deep/ .summary, /deep/ .point, /deep/ .duty {
+      display table-row
+      &::before {
+        display table-cell
+        width 3rem
+      }
+    }
+  }
+
   .content-left {
     .content-header {
       margin: 0 50% 0 0;
@@ -96,8 +116,14 @@
     }
     .content-body {
       margin 0 50% 0 0
-      text-align right
       padding-right $pd
+    }
+    .technology {
+      text-align right
+    }
+    .description {
+      max-width 600px
+      float right
     }
   }
 
