@@ -1,25 +1,28 @@
 <template>
   <div class="container">
     <div class="full-container flex-column">
-      <div class="background"></div>
       <div class="image-container">
         <div class="image"></div>
-        <div class="item-list">
-          <vivus-pend class="pend-1">
-            <text>Node.js</text>
-          </vivus-pend>
-          <vivus-pend class="pend-2" :point2="[50, 60]">
-            <text>Node.js</text>
-          </vivus-pend>
-          <vivus-pend class="pend-3" :point2="[-40, 60]" :isXTurn="true">
-            <text>Node.js</text>
-          </vivus-pend>
+      </div>
+      <div class="relative">
+        <h1 class="designation"> zeev-kell </h1>
+        <div class="orientation">
+          <div class="flex-per-50 text-right">
+            Front-End Developer
+          </div>
+          <div style="margin: 0 0.6rem">
+            /
+          </div>
+          <div class="flex-per-50 text-left">
+            Node.js Software Engineer
+          </div>
         </div>
       </div>
       <div class="flex-row is-justify-center icons-wrap">
         <github/>
         <misc/>
       </div>
+      <!--<div class="background"></div>-->
     </div>
     <div class="work-container">
       <header class="work-title">工作经历</header>
@@ -37,8 +40,6 @@
 </template>
 
 <script type="text/babel">
-  import {random} from '../assets/utils';
-  import VivusPend from '../components/vivus-pend'
   import Github from '~/components/github'
   import Misc from '~/components/misc'
   import WorkContent from '~/components/work-content'
@@ -70,11 +71,11 @@
             link: 'http://www.divingtime.asia/',
             date: '2015.5 - 2016.3',
             technology: 'Angular.js(1.x) + Bootstrap',
-            post: '前端开发 + Node.js 开发',
+            post: '前端开发',
             description: [
-              '<div class="summary">潜游时光是针对中国区域日渐崛起的潜水度假市场，推出的专业特色服务，为了更大程度的开拓市场，自主开发了属于自己的电商平台。</div>',
+              '<div class="summary">针对中国区域日渐崛起的潜水度假市场，推出的专业特色服务，自主开发的<strong>电商平台</strong>。</div>',
               '<div class="point">响应式设计，定制化行程。</div>',
-              '<div class="duty">前端 Angular.js(1.x) 开发。</div>'
+              '<div class="duty">前端<code>Angular.js</code>开发。</div>'
             ].join('')
           }]
         }, {
@@ -85,29 +86,29 @@
             link: 'https://www.bgionline.cn/',
             date: '2016.3 - 2019.2',
             technology: 'Ember.js + jQuery + Bootstrap',
-            post: '前端开发 + Node.js 开发',
+            post: '前端开发',
             description: [
-              '<div class="summary">一款基于云计算与云储存能力，主要为各大测序服务商、研究机构等提供多组学大数据方面的综合解决方案等基因云平台，持多种形式进行上传下载，一键启动WGS、WES、RNA-Seq等多种分析流程。</div>',
+              '<div class="summary">一款基于云计算与云储存能力，主要为各大测序服务商、研究机构等提供多组学大数据方面的综合解决方案等<strong>基因云平台</strong>，持多种形式进行上传下载，一键启动WGS、WES、RNA-Seq等多种分析流程。</div>',
               '<div class="point">大文件上传下载，自定义分析流程，多人项目协作，微服务化。</div>',
-              '<div class="duty">前端 ember.js 的开发，搭建后端微服务框架， 后端 Node.js 的开发和数据库优化。</div>'
+              '<div class="duty">前端<code>Ember.js</code>的开发，搭建后端微服务框架，后端<code>Node.js</code>的开发和数据库优化。</div>'
             ].join('')
           }, {
             title: '达芬奇 - 生命数据可视化 V1.0',
             date: '2016.8 - 至今',
-            technology: 'jQuery + websocket + D3.js',
-            post: '前端开发',
+            technology: 'jQuery + WebSocket + D3.js',
+            post: '全栈开发',
             description: [
-              '<div class="summary">一款基于云计算与云储存能力，主要为各大测序服务商、研究机构等提供多组学大数据方面的综合解决方案等基因云平台，持多种形式进行上传下载，一键启动WGS、WES、RNA-Seq等多种分析流程。</div>',
-              '<div class="point">大文件上传下载，自定义分析流程，多人项目协作，微服务化。</div>',
-              '<div class="duty">前端 ember.js 的开发，搭建后端微服务框架， 后端 Node.js 的开发和数据库优化。</div>'
+              '<div class="summary">一个展示华大<i>NIFTY产前检测</i>相关数据的<strong>可视化系统</strong>，这套系统后来结合其他产业链，形成一个大数据可视化系统，目前只能在基因库超大环屏展示</div>',
+              '<div class="point">操控显示端分离，百万级数据处理，图形可视化，9 * 3规格的环屏。</div>',
+              '<div class="duty">参与排版设计，负责各种图表展示，设计<code>WebSocket</code>的通信规则。</div>'
             ].join('')
           }, {
             title: '达芬奇 - 生命数据可视化 V2.0',
             date: '2017.3 - 至今',
-            technology: 'Vue.js + Koa2.js + ECharts.js',
+            technology: 'Vue.js + ECharts.js + Koa2.js',
             post: '全栈开发',
             description: [
-              '<div class="summary">针对 达芬奇v1.0 做的升级 ，适用于普通的展厅触屏版，并且增加对手机的适配。</div>',
+              '<div class="summary">针对达芬奇v1.0做的升级，适用于普通的展厅触屏版，并且增加对手机的适配。</div>',
               '<div class="point">响应式图表设计，移动端性能优化。</div>',
               '<div class="duty">排版设计（响应式设计），前后端开发。</div>'
             ].join('')
@@ -117,9 +118,9 @@
             technology: 'Koa2.js + mysql',
             post: '后端开发',
             description: [
-              '<div class="summary">针对 BGIonline 而设计自动化生产系统，通过流水线式的自动化处理，最大化减少人工操作，提高标准信息分析效率的同时，规避人工引入错误，提高分析任务成功率。</div>',
+              '<div class="summary">针对 BGIOnline 而设计<strong>自动化生产系统</strong>，通过流水线式的自动化处理，最大化减少人工操作，提高标准信息分析效率的同时，规避人工引入错误，提高分析任务成功率。</div>',
               '<div class="point">自动上传下载文件，自动启动分析任务。</div>',
-              '<div class="duty">参与产品设计，负责自动化流程设计，负责后端数据库设计，主要后端 Node.js 的开发。</div>'
+              '<div class="duty">参与产品设计，负责自动化流程设计，负责后端数据库设计，主要后端<code>Node.js</code>的开发。</div>'
             ].join('')
           }, {
             title: '基因组学标准评测平台',
@@ -127,9 +128,9 @@
             technology: 'Koa2.js + mysql + Python + CWL',
             post: '后端开发',
             description: [
-              '<div class="summary">基因数据标准评测平台，通过汇聚海量人类基因组学的生物信息分析流程，提炼得到标准统一的人类基因组学标准规范的云平台。</div>',
+              '<div class="summary">通过汇聚海量人类基因组学的生物信息分析流程，提炼得到标准统一的人类基因组学标准规范的云平台。</div>',
               '<div class="point">CWL（生物分析流程描述语言），工具Docker镜像，kafka队列</div>',
-              '<div class="duty">后端微服务 Node.js 的开发，数据库设计，CWL 格式处理，kafka队列生产和消费。</div>'
+              '<div class="duty">后端微服务<code>Node.js</code>的开发，数据库设计，CWL 格式处理，kafka队列生产和消费。</div>'
             ].join('')
           }].reverse()
         }].reverse()
@@ -147,7 +148,6 @@
       }
     },
     components: {
-      VivusPend,
       Github,
       Misc,
       WorkContent
@@ -155,7 +155,7 @@
   }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus">
   @import "../assets/stylus/mixins.styl";
   $pd = 20px;
   $bg = #35495e;
@@ -163,10 +163,8 @@
   .background {
     position absolute;
     z-index 0;
-    background #EEE
     width 100%
     height 100%;
-    background url("/image/bg.jpg") no-repeat
     background-size cover
   }
 
@@ -183,19 +181,33 @@
     position relative
   }
 
-  .pend-1 {
-    top 30%
-    left 80%
+  .designation {
+    font-size 6rem
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(20deg);
+    margin 4rem 0 4rem 0
+    text-align center
+    color #7f828b
+    &::before, &::after {
+      content ' '
+      position: relative
+      width 2rem;
+      height 0.2rem;
+      display inline-block
+      vertical-align middle
+      background #7f828b
+    }
   }
 
-  .pend-2 {
-    top 70%
-    left 70%
+  .orientation {
+    margin 2rem 0
+    display flex
+    flex-wrap nowrap
+    color #7f828b
   }
 
-  .pend-3 {
-    top 50%
-    left 20%
+  .flex-per-50 {
+    flex 1 1 50%
   }
 
   .work-title {
@@ -203,10 +215,9 @@
     font-size 2.5rem;
     position relative;
     font-weight bold;
-    margin-bottom: 60px;
-    padding: 4rem 0 3rem;
+    padding: 4rem 0 4rem;
+    margin-bottom 4rem
     border-bottom: 1px solid #E4EAEC;
-    background #f7f8fb
     &:after {
       display inline-block;
       width 4rem;
@@ -228,7 +239,7 @@
   }
 
   .work-list {
-    margin-bottom 2em;
+    margin-bottom 4rem;
   }
 
   /* content */
@@ -263,6 +274,10 @@
       margin-left -8px;
       top 0;
     }
+  }
+
+  .icons-wrap a {
+    margin: 0 6px;
   }
 
 </style>

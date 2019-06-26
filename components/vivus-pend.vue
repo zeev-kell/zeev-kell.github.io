@@ -72,8 +72,6 @@
   .pend {
     position absolute
     z-index 10;
-    left 0;
-    top 0;
   }
 
   svg {

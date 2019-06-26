@@ -20,8 +20,7 @@
     "koa": "^2.6.2",
     "nuxt": "^2.4.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "vivus": "^0.4.4"
+    "stylus-loader": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
