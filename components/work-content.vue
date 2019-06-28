@@ -5,20 +5,16 @@
         <h2>
           <a :href="content.link" target="_blank">
             {{content.title}}
-            <!--<span class="post"> {{content.post}}</span>-->
           </a>
         </h2>
-        <!--<i class="content-date">-->
-        <!--{{content.date}}-->
-        <!--</i>-->
         <p class="blank">&nbsp;</p>
       </div>
       <div class="hexagon"></div>
     </div>
     <div class="content-text">
       <div class="content-body">
-        <div class="hand">
-          <strong class="technology">{{content.technology}}</strong>
+        <div class="technology">
+          <strong>{{content.technology}}</strong>
         </div>
         <div class="description" v-html="content.description"></div>
         <div style="clear: both"></div>
@@ -81,51 +77,20 @@
     width 50%;
     margin 0 0 0 50%
     padding 0 0 7rem $pd;
-    +for_breakpoint(desktop_) {
-    }
     > div {
       margin-bottom 1rem
+    }
+    +for_breakpoint(desktop_) {
     }
   }
 
   .description {
-    max-width 350px
-    /*background: #F6F6F6*/
-    /*padding 20px;*/
     color #666;
     font-size 14px;
-    /*
-    /deep/ .summary::before {
-      content '概述：'
-    }
-    /deep/ .point::before {
-      content '特点：'
-    }
-    /deep/ .duty::before {
-      content '职责：'
-    }
-    */
-    /deep/ .point {
-      display none
-    }
-    /deep/ .duty {
-      display none
-    }
+    max-width 350px;
   }
 
   /deep/ .description {
-    & > div {
-      display table-row
-      &::before {
-        display table-cell
-        width 3rem
-      }
-      &::after {
-        display block
-        height 5px;
-        content ' '
-      }
-    }
     strong {
       color #008b8b
       display inline-block
@@ -150,7 +115,7 @@
       margin 0 50% 0 0
       padding-right $pd
     }
-    .hand, .technology, .post {
+    .technology {
       text-align right
     }
     .description {
@@ -158,10 +123,8 @@
     }
   }
 
-  .post {
-    color orangered;
-    font-weight bold
-    font-size 12px;
+  .technology {
+    color #7f828b
   }
 
   /* point line */

@@ -22,10 +22,15 @@
         <github/>
         <misc/>
       </div>
-      <!--<div class="background"></div>-->
     </div>
+
+    <div class="skill-container">
+      <header class="work-title">personal skills</header>
+      <div>11</div>
+    </div>
+
     <div class="work-container">
-      <header class="work-title">工作经历</header>
+      <header class="work-title">experience</header>
       <div class="work-list" v-for="work in workList">
         <div class="time text-center">
           <h2>{{work.time}}</h2>
@@ -57,11 +62,7 @@
             date: '2014.5 - 2014.x',
             technology: 'Struts2 + Mybatis',
             post: 'Java开发',
-            description: [
-              '<div class="summary">x。</div>',
-              '<div class="point">x。</div>',
-              '<div class="duty">x。</div>'
-            ].join('')
+            description: 'trigger'
           }]
         }, {
           time: '2015.5 - 2016.3',
@@ -72,11 +73,7 @@
             date: '2015.5 - 2016.3',
             technology: 'Angular.js(1.x) + Bootstrap',
             post: '前端开发',
-            description: [
-              '<div class="summary">针对中国区域日渐崛起的潜水度假市场，推出的专业特色服务，自主开发的<strong>电商平台</strong>。</div>',
-              '<div class="point">响应式设计，定制化行程。</div>',
-              '<div class="duty">前端<code>Angular.js</code>开发。</div>'
-            ].join('')
+            description: '针对中国区域日渐崛起的潜水度假市场，推出的专业特色服务，自主开发的<strong>电商平台</strong>。'
           }]
         }, {
           time: '2016.3 - 至今',
@@ -87,51 +84,33 @@
             date: '2016.3 - 2019.2',
             technology: 'Ember.js + jQuery + Bootstrap',
             post: '前端开发',
-            description: [
-              '<div class="summary">一款基于云计算与云储存能力，主要为各大测序服务商、研究机构等提供多组学大数据方面的综合解决方案等<strong>基因云平台</strong>，持多种形式进行上传下载，一键启动WGS、WES、RNA-Seq等多种分析流程。</div>',
-              '<div class="point">大文件上传下载，自定义分析流程，多人项目协作，微服务化。</div>',
-              '<div class="duty">前端<code>Ember.js</code>的开发，搭建后端微服务框架，后端<code>Node.js</code>的开发和数据库优化。</div>'
-            ].join('')
+            description: '基于云计算与云储存能力的<strong>基因云平台</strong>，持多种形式进行上传下载，一键启动WGS、WES、RNA-Seq等多种分析流程。'
           }, {
             title: '达芬奇 - 生命数据可视化 V1.0',
             date: '2016.8 - 至今',
             technology: 'jQuery + WebSocket + D3.js',
             post: '全栈开发',
-            description: [
-              '<div class="summary">一个展示华大<i>NIFTY产前检测</i>相关数据的<strong>可视化系统</strong>，这套系统后来结合其他产业链，形成一个大数据可视化系统，目前只能在基因库超大环屏展示</div>',
-              '<div class="point">操控显示端分离，百万级数据处理，图形可视化，9 * 3规格的环屏。</div>',
-              '<div class="duty">参与排版设计，负责各种图表展示，设计<code>WebSocket</code>的通信规则。</div>'
-            ].join('')
+            description: '展示华大部分产业相关数据的<strong>大数据可视化系统</strong>，目前只能在基因库超大环屏展示'
           }, {
             title: '达芬奇 - 生命数据可视化 V2.0',
+            link: 'http://davinci.bgionline.cn/sign-in',
             date: '2017.3 - 至今',
             technology: 'Vue.js + ECharts.js + Koa2.js',
             post: '全栈开发',
-            description: [
-              '<div class="summary">针对达芬奇v1.0做的升级，适用于普通的展厅触屏版，并且增加对手机的适配。</div>',
-              '<div class="point">响应式图表设计，移动端性能优化。</div>',
-              '<div class="duty">排版设计（响应式设计），前后端开发。</div>'
-            ].join('')
+            description: '针对<strong>达芬奇v1.0</strong>做的升级，适用于普通的展厅触屏版，并且增加对手机的适配。'
           }, {
             title: 'BGIOnline 自动化生产系统',
+            link: 'https://auto.bgionline.cn/#/access/login',
             date: '2018.5 - 2019.2',
             technology: 'Koa2.js + mysql',
             post: '后端开发',
-            description: [
-              '<div class="summary">针对 BGIOnline 而设计<strong>自动化生产系统</strong>，通过流水线式的自动化处理，最大化减少人工操作，提高标准信息分析效率的同时，规避人工引入错误，提高分析任务成功率。</div>',
-              '<div class="point">自动上传下载文件，自动启动分析任务。</div>',
-              '<div class="duty">参与产品设计，负责自动化流程设计，负责后端数据库设计，主要后端<code>Node.js</code>的开发。</div>'
-            ].join('')
+            description: '针对BGIOnline而设计<strong>自动化生产系统</strong>，通过流水线式的自动化处理，最大化减少人工操作，提高分析任务成功率。'
           }, {
             title: '基因组学标准评测平台',
             date: '2019.4 - 至今',
             technology: 'Koa2.js + mysql + Python + CWL',
             post: '后端开发',
-            description: [
-              '<div class="summary">通过汇聚海量人类基因组学的生物信息分析流程，提炼得到标准统一的人类基因组学标准规范的云平台。</div>',
-              '<div class="point">CWL（生物分析流程描述语言），工具Docker镜像，kafka队列</div>',
-              '<div class="duty">后端微服务<code>Node.js</code>的开发，数据库设计，CWL 格式处理，kafka队列生产和消费。</div>'
-            ].join('')
+            description: '通过汇聚海量人类基因组学的生物信息分析流程，提炼得到标准统一的<strong>人类基因组学标准规范的云平台</strong>。'
           }].reverse()
         }].reverse()
       }
@@ -210,6 +189,10 @@
     flex 1 1 50%
   }
 
+  .work-container {
+    max-width 1200px;
+  }
+
   .work-title {
     text-align: center;
     font-size 2.5rem;
@@ -218,6 +201,7 @@
     padding: 4rem 0 4rem;
     margin-bottom 4rem
     border-bottom: 1px solid #E4EAEC;
+    text-transform: capitalize
     &:after {
       display inline-block;
       width 4rem;
