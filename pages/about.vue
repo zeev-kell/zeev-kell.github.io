@@ -59,11 +59,23 @@
           contents: [{
             title: '深圳海事政务服务综合平台',
             link: 'http://219.133.95.7:7021/BenchmarkBusiness/pages/Login.jsp',
-            date: '2014.5 - 2014.x',
-            technology: 'Struts2 + Mybatis',
-            post: 'Java开发',
-            description: 'trigger'
-          }]
+            date: '2014.5 - 2014.10',
+            technology: 'Struts2 + Mybatis + Jquery + EasyUI',
+            post: 'Java Web开发',
+            description: '深圳海事局按照“统一受理、统一监察、统一审批”的思路，率先整合接入通航管理类审批，船舶登记类审批，危管防污类审批等业务功能，同时对效能监察平台进行改造。'
+          }, {
+            title: '部海事局协同管理平台',
+            date: '2014.10 - 2015.1',
+            technology: 'Struts2 + Mybatis + Jquery + EasyUI',
+            post: '小组组长-前端开发',
+            description: '将在现有系统完善升级的基础上，实现海事信息系统的统一内部用户认证和权限分配，实现各专业系统的<strong>单点登录管理</strong>等功能。'
+          }, {
+            title: '易数通用户中心平台',
+            date: '2015.1 - 2015.5',
+            technology: 'SSH + MySQL + Jquery + EasyUI',
+            post: '前端组长',
+            description: '整合易数通其他系统的用户管理，主要涉及权限、质控流程控制。'
+          }].reverse()
         }, {
           time: '2015.5 - 2016.3',
           subText: '深圳市潜游时光文化传媒有限公司',
@@ -187,10 +199,6 @@
 
   .flex-per-50 {
     flex 1 1 50%
-  }
-
-  .work-container {
-    max-width 1200px;
   }
 
   .work-title {
