@@ -30,8 +30,8 @@
   }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
-  @import "../assets/stylus/mixins.styl";
+<style lang="stylus" rel="stylesheet/stylus">
+  @import "../../assets/stylus/mixins.styl";
   $pd = 20px;
   $bg = #35495e;
 
@@ -76,7 +76,7 @@
   .content-body {
     width 50%;
     margin 0 0 0 50%
-    padding 0 0 7rem $pd;
+    padding 0 0 5rem $pd;
     > div {
       margin-bottom 1rem
     }
@@ -90,7 +90,7 @@
     max-width 350px;
   }
 
-  /deep/ .description {
+  .description {
     strong {
       color #008b8b
       display inline-block
