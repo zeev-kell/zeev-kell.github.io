@@ -8,7 +8,7 @@
         <p class="work-post">{{work.post}}</p>
       </div>
       <ul class="content-container">
-        <work-content :content="content" v-for="content in work.contents" :key="content.index"/>
+        <work-content :item="item" v-for="item in work.contents" :key="item.index"/>
       </ul>
     </div>
   </div>
@@ -32,7 +32,8 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  $bg = #35495e;
+  @import "../../assets/stylus/var.styl";
+
   .sub-text {
     color: #7f828b
     font-size 80%;

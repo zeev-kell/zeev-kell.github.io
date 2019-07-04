@@ -1,8 +1,9 @@
 <template>
-  <div class="container">
+  <div class="about-container">
     <profile-container/>
     <skill-container/>
     <work-container/>
+    <footer-container/>
   </div>
 </template>
 
@@ -10,13 +11,15 @@
   import ProfileContainer from '~/components/about/profile-container'
   import SkillContainer from '~/components/about/skill-container'
   import WorkContainer from '~/components/about/work-container'
+  import FooterContainer from '~/components/footer-container'
 
   export default {
     name: "about",
     components: {
       ProfileContainer,
       SkillContainer,
-      WorkContainer
+      WorkContainer,
+      FooterContainer
     }
   }
 </script>

@@ -1,10 +1,10 @@
 <template>
-  <li class="content-list" :class="{'content-left':content.index & 1}">
+  <li class="content-list" :class="{'content-left':item.index & 1}">
     <div class="content-header">
       <div class="content-title">
         <h2>
-          <a :href="content.link" target="_blank">
-            {{content.title}}
+          <a :href="item.link" target="_blank">
+            {{item.title}}
           </a>
         </h2>
         <p class="blank">&nbsp;</p>
@@ -14,9 +14,9 @@
     <div class="content-text">
       <div class="content-body">
         <div class="technology">
-          <strong>{{content.technology}}</strong>
+          <strong>{{item.technology}}</strong>
         </div>
-        <div class="description" v-html="content.description"></div>
+        <div class="description" v-html="item.description"></div>
         <div style="clear: both"></div>
       </div>
     </div>
@@ -26,14 +26,14 @@
 <script type="text/babel">
   export default {
     name: "work-content",
-    props: ['content']
+    props: ['item']
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../assets/stylus/mixins.styl";
+  @import "../../assets/stylus/var.styl";
   $pd = 20px;
-  $bg = #35495e;
 
   .content-list {
     padding-top 3rem

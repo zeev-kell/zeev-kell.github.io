@@ -25,3 +25,17 @@
 .is-justify-center {
   justify-content: center;
 }
+
+$flex-column = 12;
+$flex-list = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+for $i in $flex-list
+  .flex-item-{$i} {
+    float: left;
+    width: ($i  * 100% / $flex-column);
+  }
+  .flex-offset-{$i} {
+    margin-left: ($i  * 100% / $flex-column);
+  }
+  .flex-order-{$i} {
+    order: $i;
+  }

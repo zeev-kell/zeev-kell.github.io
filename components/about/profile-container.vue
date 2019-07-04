@@ -29,14 +29,16 @@
   import Misc from '~/components/misc'
 
   export default {
-    Github,
-    Misc,
-    name: "profile-container"
+    name: "profile-container",
+    components: {
+      Github,
+      Misc,
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  $bg = #35495e;
+  @import "../../assets/stylus/var.styl";
 
   .image {
     background $bg
