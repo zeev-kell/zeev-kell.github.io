@@ -1,3 +1,4 @@
+@import "./mixins.styl";
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
@@ -7,6 +8,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  +for_breakpoint(_tablet) {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -52,4 +56,11 @@ body {
 
 .text-right {
   text-align right
+}
+
+.re-container {
+  +for_breakpoint(_tablet) {
+    padding-left 15px;
+    padding-right 15px;
+  }
 }

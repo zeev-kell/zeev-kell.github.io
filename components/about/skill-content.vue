@@ -1,7 +1,7 @@
 <template>
-  <li class="flex-item-3 text-center">
+  <li class="flex-item-3 flex-item-sm-12 text-center skill-content">
     <h3 class="skill-title">{{item.title}}</h3>
-    <p class="skill-content" v-html="item.content"></p>
+    <p class="content" v-html="item.content"></p>
   </li>
 </template>
 
@@ -13,21 +13,30 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "../../assets/stylus/mixins.styl";
   .skill-title {
     margin 1.5rem 0
     letter-spacing: 0.2rem;
     font-weight bold
   }
 
-  .skill-content /deep/ {
+  .content /deep/ {
     code {
       color orange
-      margin 0 0.1rem
+      margin 0 0.2rem
       display inline-block
+      font-family "Consolas,monospace"
     }
     span {
       color orange
       display inline-block
+    }
+  }
+
+  .skill-content {
+    padding 2rem;
+    +for_breakpoint(_tablet) {
+      padding 1rem 2rem;
     }
   }
 </style>

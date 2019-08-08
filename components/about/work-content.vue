@@ -4,12 +4,19 @@
       <div class="content-title">
         <h2>
           <a :href="item.link" target="_blank">
+            <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="20" height="20"
+                 aria-hidden="true"
+                 v-if="item.link">
+              <path fill-rule="evenodd"
+                    stroke="#35495e"
+                    d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
             {{item.title}}
           </a>
         </h2>
         <p class="blank">&nbsp;</p>
       </div>
-      <div class="hexagon"></div>
+      <div class="hexagon hidden-sm"></div>
     </div>
     <div class="content-text">
       <div class="content-body">
@@ -38,15 +45,25 @@
   .content-list {
     padding-top 3rem
     position: relative;
+    &:first-child {
+      border-top: none;
+      margin-top: 10px;
+    }
+    +for_breakpoint(_tablet) {
+      border-top 2px dashed rgba(200, 200, 200, 0.3)
+      padding-top: 20px
+      margin-top: 25px;
+    }
   }
 
   .content-header {
-    margin: 0 0 0 50%;
-    width 50%;
+    +for_breakpoint(tablet_) {
+      margin: 0 0 0 50%;
+      width 50%;
+    }
   }
 
   .content-title {
-    padding 0 0 0 $pd;
     display flex;
     > h2, > .content-date {
       flex auto 0 0;
@@ -64,23 +81,29 @@
     }
     a {
       text-decoration none
-      color: $bg
+      color: #777777
+      &[href]:hover {
+        color: $bg
+      }
+    }
+    +for_breakpoint(tablet_) {
+      padding 0 0 0 $pd;
     }
   }
 
   .content-text {
     position relative;
-    padding 1rem 0 2rem
+    padding 1rem 0 0
   }
 
   .content-body {
-    width 50%;
-    margin 0 0 0 50%
-    padding 0 0 5rem $pd;
     > div {
       margin-bottom 1rem
     }
-    +for_breakpoint(desktop_) {
+    +for_breakpoint(tablet_) {
+      width 50%;
+      margin 0 0 0 50%
+      padding 0 0 3rem $pd;
     }
   }
 
@@ -104,22 +127,24 @@
   }
 
   .content-left {
-    .content-header {
-      margin: 0 50% 0 0;
-    }
-    .content-title {
-      flex-direction: row-reverse
-      padding 0 $pd 0 0;
-    }
-    .content-body {
-      margin 0 50% 0 0
-      padding-right $pd
-    }
-    .technology {
-      text-align right
-    }
-    .description {
-      float right
+    +for_breakpoint(tablet_) {
+      .content-header {
+        margin: 0 50% 0 0;
+      }
+      .content-title {
+        flex-direction: row-reverse
+        padding 0 $pd 0 0;
+      }
+      .content-body {
+        margin 0 50% 0 0
+        padding-right $pd
+      }
+      .technology {
+        text-align right
+      }
+      .description {
+        float right
+      }
     }
   }
 

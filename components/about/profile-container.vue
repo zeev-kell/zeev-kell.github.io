@@ -9,10 +9,10 @@
         <div class="flex-per-50 text-right">
           Front-End Developer
         </div>
-        <div style="margin: 0 0.6rem">
+        <div style="margin: 0 0.6rem" class="hidden-sm">
           /
         </div>
-        <div class="flex-per-50 text-left">
+        <div class="flex-per-50 text-left hidden-sm">
           Node.js Software Engineer
         </div>
       </div>
@@ -38,6 +38,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../../assets/stylus/mixins.styl";
   @import "../../assets/stylus/var.styl";
 
   .image {
@@ -64,6 +65,10 @@
       vertical-align middle
       background #7f828b
     }
+    +for_breakpoint(_tablet) {
+      font-size 3rem
+      margin 2rem 0 2rem 0
+    }
   }
 
   .orientation {
@@ -75,6 +80,9 @@
 
   .flex-per-50 {
     flex 1 1 50%
+    +for_breakpoint(_tablet) {
+      text-align center
+    }
   }
 
   .icons-wrap a {

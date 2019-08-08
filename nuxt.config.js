@@ -27,7 +27,8 @@ module.exports = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ],
     script: [
-      ...hm
+      ...hm,
+      {innerHTML: 'window.updatedAt=' + new Date().getTime(), type: 'text/javascript', charset: 'utf-8'}
     ]
   },
 

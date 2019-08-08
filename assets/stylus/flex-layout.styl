@@ -39,3 +39,19 @@ for $i in $flex-list
   .flex-order-{$i} {
     order: $i;
   }
+
+for $i in $flex-list
+  @media (max-width: 768px) {
+    .flex-item-sm-{$i} {
+      float: left;
+      width: ($i  * 100% / $flex-column);
+    }
+  }
+
+for $i in $flex-list
+  @media (max-width: 992px) {
+    .flex-item-md-{$i} {
+      float: left;
+      width: ($i  * 100% / $flex-column);
+    }
+  }

@@ -48,5 +48,9 @@
       margin-left -2rem;
       margin-top -2px;
     }
+    +for_breakpoint(_tablet) {
+      padding: 2rem 0 2rem;
+      margin-bottom: 2rem
+    }
   }
 </style>
