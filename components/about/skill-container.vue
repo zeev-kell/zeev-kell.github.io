@@ -56,14 +56,19 @@
         background #c6cbd1
       }
     }
+    +for_breakpoint(_tablet) {
+      padding-bottom 2rem;
+    }
   }
 
   .skill-text {
-    text-align center
     color #c6cbd1
     margin 3rem 0 4rem
     +for_breakpoint(_tablet) {
-      margin 0
+      margin 0 0 3rem 0
+    }
+    +for_breakpoint(tablet_) {
+      text-align center
     }
   }
 

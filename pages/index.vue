@@ -2,14 +2,14 @@
   <section class="full-container">
     <div style="position:relative;z-index: 2">
       <h1 class="title">
-        zeev-kell
+        <a href="/about" title="about zeev-kell">zeev-kell</a>
       </h1>
       <h2 class="subtitle">
         Front End Engineer
       </h2>
       <div class="flex-row is-justify-center icons-wrap">
-        <github/>
-        <misc/>
+        <icon-github/>
+        <icon-misc/>
       </div>
     </div>
     <canvas id="canvas"></canvas>
@@ -18,8 +18,8 @@
 
 <script type="text/babel">
   import Particle from '~/assets/particle'
-  import Github from '~/components/github'
-  import Misc from '~/components/misc'
+  import IconGithub from '~/components/icon-github'
+  import IconMisc from '~/components/icon-misc'
 
   export default {
     data() {
@@ -38,8 +38,8 @@
       window.removeEventListener('resize', this.particle.resize.bind(this.particle));
     },
     components: {
-      Github,
-      Misc
+      IconGithub,
+      IconMisc,
     }
   }
 </script>
@@ -63,6 +63,10 @@
     letter-spacing: 1px;
     +for_breakpoint(_tablet) {
       font-size: 4rem;
+    }
+    a {
+      text-decoration none
+      color inherit
     }
   }
 

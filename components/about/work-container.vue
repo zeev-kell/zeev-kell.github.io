@@ -4,7 +4,10 @@
     <div class="work-list" v-for="work in workList">
       <div class="time text-center">
         <h2>{{work.time}}</h2>
-        <p v-if="work.subText" class="sub-text">{{work.subText}}</p>
+        <p v-if="work.subText" class="sub-text">
+          {{work.subText}}
+          <span class="show-sm-ib"> - {{work.post}}</span>
+        </p>
         <p class="work-post hidden-sm">{{work.post}}</p>
       </div>
       <ul class="content-container">

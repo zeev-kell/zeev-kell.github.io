@@ -11,6 +11,6 @@
 
 <script type="text/babel">
   export default {
-    name: "github"
+    name: "icon-github"
   }
 </script>

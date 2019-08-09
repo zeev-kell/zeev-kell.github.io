@@ -18,21 +18,21 @@
       </div>
     </div>
     <div class="flex-row is-justify-center icons-wrap">
-      <github/>
-      <misc/>
+      <icon-github/>
+      <icon-misc/>
     </div>
   </div>
 </template>
 
 <script type="text/babel">
-  import Github from '~/components/github'
-  import Misc from '~/components/misc'
+  import IconGithub from '~/components/icon-github'
+  import IconMisc from '~/components/icon-misc'
 
   export default {
     name: "profile-container",
     components: {
-      Github,
-      Misc,
+      IconGithub,
+      IconMisc,
     }
   }
 </script>
@@ -42,7 +42,8 @@
   @import "../../assets/stylus/var.styl";
 
   .image {
-    background $bg
+    background url("/image/profile-img.png") no-repeat
+    background-size: contain;
     border-radius 50%;
     width 25vh;
     height 25vh;

@@ -6,7 +6,7 @@
 
 <script type="text/babel">
   export default {
-    name: "misc"
+    name: "icon-misc"
   }
 </script>
 <style scoped lang="stylus" rel="stylesheet/stylus">

@@ -1,7 +1,14 @@
 @import './mixins.styl';
 
+.show-sm-ib {
+  display none
+}
+
 +for_breakpoint(_tablet) {
   .hidden-sm {
     display none
+  }
+  .show-sm-ib {
+    display inline-block
   }
 }
