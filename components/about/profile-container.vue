@@ -42,7 +42,7 @@
   @import "../../assets/stylus/var.styl";
 
   .image {
-    background url("/image/profile-img.png") no-repeat
+    background url("~assets/image/profile-img.png") no-repeat
     background-size: contain;
     border-radius 50%;
     width 25vh;

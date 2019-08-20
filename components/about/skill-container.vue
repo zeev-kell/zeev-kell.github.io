@@ -44,7 +44,7 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../assets/stylus/mixins.styl";
   .skill-container {
-    background url("~assets/skill-banner.jpg")
+    background url("~assets/image/skill-banner.jpg")
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;

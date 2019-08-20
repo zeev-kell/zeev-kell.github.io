@@ -8,7 +8,6 @@
   @import "../assets/stylus/layout.styl";
   @import "../assets/stylus/responsive.styl";
   @import "../assets/stylus/icon.styl";
-  @import "../assets/stylus/flex-layout.styl";
 </style>
 
 <script type="text/babel">

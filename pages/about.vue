@@ -25,6 +25,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../assets/stylus/flex-layout.styl";
   @import "../assets/stylus/mixins.styl";
 
   .container-title {

@@ -29,11 +29,12 @@ class Particle {
       wave: 100, //-- 波动，影响生成第三个点到前两个点的距离
       ..._opts
     };
-    if (typeof _opts['drawType'] === 'string') {
+    if (!_opts['drawType']) {
+      // 绘制的类型，可选类型有 polygon circle line，默认 circle
+      opts.drawType = ['circle'];
+    } else if (typeof _opts['drawType'] === 'string') {
       _opts.drawType = [_opts['drawType']]
     }
-    // 绘制的类型，可选类型有 polygon circle line，默认 circle
-    opts.drawType = _opts.drawType || ['circle'];
     // 用于绘制的函数
     this.drawMethods = opts.drawType.map((type) => {
       return 'draw' + type.substring(0, 1).toUpperCase() + type.substring(1);
@@ -166,7 +167,7 @@ class Particle {
 
 function getDrawHelper(opts) {
   // 目前只有 polygon 有随机边角
-  if (!!~opts.drawType.indexOf('polygon')) {
+  if (~opts.drawType.indexOf('polygon')) {
     let drawHelper = {
       getSideLength() {
         return Math.floor(random() * 10) + 3;

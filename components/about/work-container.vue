@@ -46,7 +46,7 @@
       bottom 0
       height 100px
       width: 100%
-      background url("/image/bg-city.png") no-repeat 0 100%
+      background url("~assets/image/bg-city.png") no-repeat 0 100%
       background-size cover
       opacity 0.1
       left: 0
